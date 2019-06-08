@@ -1,10 +1,40 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {store, stateMapper} from '../store/store.js';
 
-class Videos extends React.Component {
+
+class VideosComponent extends React.Component {
+    componentDidMount(){
+        store.dispatch({
+            type:"FETCH_VIDEOS"
+        });
+    }
+    render() {
+        return this.props.videos.map(v => {
+                return(
+                    <div key={v.id} className="col-md-4">
+                        <a target="_blank" href={'https://youtube.com/watch?v=${v.id}'}>
+                        <img className="img-fluid" src={v.snippet.thumbnails.high.url} alt={v.snippet.title}></img>
+                        </a>
+                        <p>{v.snippet.title}by<em>
+                            {v.snippet.channelTitle}</em>
+                        </p>
+                        <hr></hr>
+                
+                                        
+                    </div>
+                );
+            })
+            
+        
+    }
     render() {
         return(
-            <h2>Videos goes here......</h2>
+            <div className="row">
+                {this.renderVideos()}
+            </div>
         );
     }
 }
+let Videos = connect(stateMapper)(VideosComponent);
 export default Videos;

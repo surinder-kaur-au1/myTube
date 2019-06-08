@@ -1,7 +1,7 @@
 import { store } from "../store";
 
 function fetchVideos(videoType) {
-    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyC0fpSJ4LR3b2jmarEXTHsHW4UlE12NW84")
+    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyC0fpSJ4LR3b2jmarEXTHsHW4UlE12NW84&maxResults=30")
     .then(function(data) {
         return data.json();
     })

@@ -1,5 +1,5 @@
 import {fetchVideos } from '../api/youtube.js';
-//import {store} from '../store.js';
+import {store} from '../store.js';
 function videoReducers(videos=[], action) {
     if(action.type ="FETCH_VIDEOS") {
 

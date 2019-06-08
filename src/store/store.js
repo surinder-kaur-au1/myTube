@@ -5,5 +5,12 @@ let reducer = combineReducers({
 });
 let store = createStore(reducer);
 
+store.subscribe(function(){
+    console.log(store.getState());
+})
 
-export {store};
+
+function stateMapper(state) {
+    return state;
+}
+export {store, stateMapper};
