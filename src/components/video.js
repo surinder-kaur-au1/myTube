@@ -9,7 +9,7 @@ class VideosComponent extends React.Component {
             type:"FETCH_VIDEOS"
         });
     }
-    render() {
+    renderVideos() {
         return this.props.videos.map(v => {
                 return(
                     <div key={v.id} className="col-md-4">
