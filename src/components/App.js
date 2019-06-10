@@ -1,9 +1,9 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Videos from './video.js';
-import {store, stateMapper} from '../store/store.js';
+import {store} from '../store/store.js';
 import Menu from './Menu.js';
 import Trending from './Trending.js';
 import Search from './Search.js';

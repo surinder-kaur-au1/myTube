@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Videos from './video.js';
+//import Videos from './video.js';
 import {stateMapper} from '../store/store.js';
 class TrendingComponent extends React.Component {
     componentDidMount(){
