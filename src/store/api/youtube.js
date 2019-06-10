@@ -1,5 +1,5 @@
 import { store } from "../store";
-
+if(videoType == "trending") {
 function fetchVideos(videoType) {
     fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyDXNeGH66QQlxo8dRAbIpAxUOdDg5WO9l8&chart=mostPopular")
     .then(function(data) {
@@ -15,5 +15,6 @@ function fetchVideos(videoType) {
      .catch(function(err) {
         console.log(err);
     })
+}
 }
 export {fetchVideos};
