@@ -1,0 +1,4 @@
+let MYTUBE_CONFIG = {
+    YOUTUBE_API_KEY: "AIzaSyDXNeGH66QQlxo8dRAbIpAxUOdDg5WO9l8"
+};
+export default MYTUBE_CONFIG;

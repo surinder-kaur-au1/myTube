@@ -7,9 +7,14 @@ class VideosComponent extends React.Component {
    
     renderVideos() {
         return this.props.videos.map(v => {
+
+            let videoId = v.id;
+            if(typeof videoId != "string") {
+                videoId = v.id.videoId
+            }
                 return(
-                    <div key={v.id} className="col-md-4">
-                        <a target="_blank " href={`https://youtube.com/watch?v=${v.id}`}>
+                    <div key={v.etag} className="col-md-4">
+                        <a target="_blank " href={`https://youtube.com/watch?v=${videoId}`}>
                         <img className="img-fluid" src={v.snippet.thumbnails.high.url} alt={v.snippet.title}></img>
                         </a>
                         <p>{v.snippet.title}by<em>

@@ -1,7 +1,8 @@
-
+import MYTUBE_CONFIG from '../../config.js';
 function fetchVideos(store, action) {
     if(action.videoType === "trending") {
-    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDXNeGH66QQlxo8dRAbIpAxUOdDg5WO9l8")
+        let url =`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${MYTUBE_CONFIG.YOUTUBE_API_KEY}&maxResults=30&chart=mostPopular`;
+    fetch(url)
     .then(function(data) {
         return data.json();
     })
