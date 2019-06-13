@@ -33,8 +33,10 @@ class VideosComponent extends React.Component {
         if(this.props.isVideoLoading) {
             return(
                 <div className="row">
-                    <div className="col-md-12">
-                        <h3>Video Loading.....</h3>
+                     <div className="col-md-12">
+                      <div className="spinner-border text-danger" role="status">
+                      <span className="sr-only">Loading...</span>
+                      </div>
                     </div>
                 </div>
             );
