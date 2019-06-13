@@ -30,11 +30,22 @@ class VideosComponent extends React.Component {
         
     }
     render() {
-        return(
-            <div className="row">
-                {this.renderVideos()}
-            </div>
-        );
+        if(this.props.isVideoLoading) {
+            return(
+                <div className="row">
+                    <div className="col-md-12">
+                        <h3>Video Loading.....</h3>
+                    </div>
+                </div>
+            );
+        } else {
+            return(
+                <div className="row">
+                    {this.renderVideos()}
+                </div>
+            );
+        }
+        
     }
 }
 let Videos = connect(stateMapper)(VideosComponent);
