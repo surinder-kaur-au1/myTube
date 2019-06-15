@@ -4,12 +4,11 @@ import {store, stateMapper} from '../store/store.js';
 class VideoPlayerComponent extends React.Component {
         render() {
 
-           //console.log(this.props);
+           console.log(this.props);
             
-            return(
-                <h2>{this.props.match.params.videoId}</h2>
+            return<h2>{this.props.match.params.videoId}</h2>;
             
-            );
+            
         }
 }
 let VideoPlayer = connect(stateMapper)(VideoPlayerComponent);
