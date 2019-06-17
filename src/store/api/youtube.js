@@ -27,12 +27,36 @@ function fetchVideos(store, action) {
       store.dispatch({
         type: "VIDEOS_LOADED",
         videos: response.items
+        
       });
     })
     .catch(function(err) {
-      console.log(err);
+      console.log("fetch error=>",err);
     });
-    console.log(url);
+  
 }
 }
-export {fetchVideos};
+
+function fetchOneVideo(store, action) {
+  let url=`https://www.googleapis.com/youtube/v3/videos?
+  part=snippet%2CcontentDetails%2Cstatistics&id=${action.videoId}_
+  &key=${MYTUBE_CONFIG.YOUTUBE_API_KEY}`
+
+  //console.log(url);
+  fetch(url)
+  
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    store.dispatch({
+      type: "VIDEOS_DATA_LOADED",
+      videosData: data.items[0]
+    })
+  })
+  .catch(function(err) {
+    console.log("fetch error=>", err);
+  });
+}
+
+export {fetchVideos, fetchOneVideo};
