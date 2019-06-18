@@ -38,9 +38,7 @@ function fetchVideos(store, action) {
 }
 
 function fetchOneVideo(store, action) {
-  let url=`https://www.googleapis.com/youtube/v3/videos?
-  part=snippet%2CcontentDetails%2Cstatistics&id=${action.videoId}_
-  &key=${MYTUBE_CONFIG.YOUTUBE_API_KEY}`
+  let url=`https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${action.videoId}&key=${MYTUBE_CONFIG.YOUTUBE_API_KEY}`
 
   //console.log(url);
   fetch(url)
@@ -51,7 +49,7 @@ function fetchOneVideo(store, action) {
   .then(function(data){
     store.dispatch({
       type: "VIDEOS_DATA_LOADED",
-      videosData: data.items[0]
+      videoData: data.items[0]
     })
   })
   .catch(function(err) {
