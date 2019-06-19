@@ -92,7 +92,7 @@ class VideoPlayerComponent extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-md-8">
-                        <Comments videoId={this.props.match.params.videoId} />
+                        <Comments />
                     </div>
                 </div>
                 </div>
